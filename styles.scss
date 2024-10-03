@@ -1,7 +1,6 @@
-// @use "node_modules/@picocss/pico/scss/pico";
-@mixin mobile-only {
-  @media (max-width: 768px) {
-    @content;
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
   }
 }
 
@@ -14,15 +13,21 @@
   }
 }
 
+$pale-yellow: #f4f49c;
+$main-yellow: #e8c02e;
+$font-blue: #1f479e;
+
 body {
   font-family: "proxima-nova", sans-serif;
-  background-color: #e8c02e;
+  background-color: $pale-yellow;
   margin: 0;
+  display: flex;
+  justify-content: center;
 }
 
 h1,
 h3 {
-  color: #1f479e;
+  color: $font-blue;
 }
 
 h3 {
@@ -31,6 +36,9 @@ h3 {
 
 .container {
   display: flex;
+  width: 80%;
+  background-color: $main-yellow;
+  height: 100vh;
 }
 
 .content {
@@ -47,13 +55,21 @@ h3 {
   width: 100%;
   margin: 30px;
   padding-bottom: 30px;
-  border-bottom: 3px white solid;
+  border-bottom: 3px $pale-yellow solid;
+
+  &-message {
+    font-size: xx-large;
+    font-weight: 700;
+  }
 }
 
 .beer-icon {
+  color: $font-blue;
   animation: hover 3s linear infinite alternate;
 }
+
 .wine-icon {
+  color: $font-blue;
   animation: hover 3s linear infinite alternate-reverse;
 }
 
@@ -62,13 +78,14 @@ h3 {
   flex-direction: column;
   align-items: center;
   margin-top: 30px;
+
+  &-phone {
+    margin: 0;
+    font-style: italic;
+  }
 }
 
 .sidebar {
-  @include mobile-only {
-    display: none;
-  }
-
   border: 2px black solid;
   height: 100vh;
   z-index: 1;
