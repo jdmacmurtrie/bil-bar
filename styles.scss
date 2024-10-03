@@ -5,9 +5,28 @@
   }
 }
 
+@keyframes hover {
+  from {
+    transform: translateY(6px);
+  }
+  to {
+    transform: translateY(-6px);
+  }
+}
+
 body {
   font-family: "proxima-nova", sans-serif;
   background-color: #e8c02e;
+  margin: 0;
+}
+
+h1,
+h3 {
+  color: #1f479e;
+}
+
+h3 {
+  margin: 0;
 }
 
 .container {
@@ -16,15 +35,33 @@ body {
 
 .content {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
   width: 100%;
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: 30px;
+  padding-bottom: 30px;
+  border-bottom: 3px white solid;
+}
+
+.beer-icon {
+  animation: hover 3s linear infinite alternate;
+}
+.wine-icon {
+  animation: hover 3s linear infinite alternate-reverse;
 }
 
 .info {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 30px;
 }
 
 .sidebar {
@@ -34,4 +71,5 @@ body {
 
   border: 2px black solid;
   height: 100vh;
+  z-index: 1;
 }
