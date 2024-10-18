@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev:watch" : "npm run sass:watch & npm run livereload"
+    "dev:watch" : "npm run sass:watch & npm run livereload",
+    "sass:start": "sass --watch styles.scss:styles.css"
   },
   "author": "",
   "license": "ISC",
