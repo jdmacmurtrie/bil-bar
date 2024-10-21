@@ -1,17 +1,8 @@
-@media (max-width: 768px) {
-  .sidebar {
-    display: none;
-  }
-}
-
-@keyframes hover {
-  from {
-    transform: translateY(6px);
-  }
-  to {
-    transform: translateY(-6px);
-  }
-}
+// @media (max-width: 768px) {
+//   .sidebar {
+//     display: none;
+//   }
+// }
 
 $orange-peel: #f7941d;
 $warm-red: #d86a27;
@@ -22,66 +13,42 @@ $flat-black: #333132;
 body {
   font-family: "proxima-nova", sans-serif;
   margin: 0;
+  background-color: $green-apple;
 }
 
-.container {
-  background: url("./photos/bottle-shelf.jpg") no-repeat center;
-  backdrop-filter: blur(5px);
+.hero {
+  background: url("./photos/bottle-bar-cropped.jpg") no-repeat center;
   background-size: cover;
+  height: 450px;
   display: flex;
-  background-color: $vintage-blue;
-  height: 100vh;
+  border-bottom: $flat-black 25px solid;
+  justify-content: center;
+  align-items: center;
 }
 
-.section {
-  position: absolute;
-  top: 5%;
-  padding-bottom: 15px;
-  width: 100%;
-  backdrop-filter: blur(8px);
+.logo-outline {
+  background-color: #7ebb59;
+  height: 275px;
+  width: 550px;
+  border-radius: 60%;
+  border: 10px $flat-black solid;
+  box-shadow: $vintage-blue 9px 5px, $vintage-blue -9px 5px,
+    $vintage-blue -9px -5px, $vintage-blue 9px -5px;
+  background-color: $vintage-blue;
+
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .logo {
-  width: 450px;
-  height: 275px;
-  object-fit: none;
+  width: 400px;
+  height: 350px;
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
+.slogan {
+  color: $warm-red;
 }
-
-// .banner {
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-evenly;
-//   width: 100%;
-//   margin: 30px;
-//   padding-bottom: 30px;
-//   border-bottom: 3px $pale-yellow solid;
-
-//   &-message {
-//     font-size: xx-large;
-//     font-weight: 700;
-//   }
-// }
-
-// .beer-icon {
-//   color: $font-blue;
-//   animation: hover 3s linear infinite alternate;
-// }
-
-// .wine-icon {
-//   color: $font-blue;
-//   animation: hover 3s linear infinite alternate-reverse;
-// }
 
 .info {
   display: flex;
@@ -97,12 +64,4 @@ body {
   & > h3 {
     margin: 0;
   }
-}
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: $warm-red;
 }
