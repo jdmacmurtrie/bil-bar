@@ -25,10 +25,22 @@ body {
   box-shadow: #64a39d 9px 5px, #64a39d -9px 5px, #64a39d -9px -5px, #64a39d 9px -5px;
   background-color: #64a39d;
 }
+@media (max-width: 599px) {
+  .logo-outline {
+    height: 175px;
+    width: 300px;
+  }
+}
 
 .logo {
-  width: 400px;
-  height: 350px;
+  height: 400px;
+  width: 350px;
+}
+@media (max-width: 599px) {
+  .logo {
+    height: 200px;
+    width: 250px;
+  }
 }
 
 .slogan {
@@ -45,6 +57,11 @@ body {
   align-items: center;
   padding-bottom: 5px;
 }
+@media (max-width: 599px) {
+  .slogan {
+    font-size: 25px;
+  }
+}
 
 .information {
   display: flex;
@@ -52,12 +69,23 @@ body {
   background-color: #64a39d;
   align-items: center;
 }
+@media (max-width: 599px) {
+  .information {
+    padding: 20px 0;
+  }
+}
 
 .detail-block {
   display: flex;
   flex-direction: column;
   width: 100%;
   margin: 0 30px;
+}
+@media (max-width: 599px) {
+  .detail-block {
+    align-items: center;
+    text-align: center;
+  }
 }
 
 .details {
@@ -71,6 +99,11 @@ body {
   color: #333132;
   font-size: 32px;
   text-shadow: #7ebb59 3px 3px;
+}
+@media (max-width: 599px) {
+  .details {
+    font-size: 24px;
+  }
 }
 
 .icon-group {
@@ -102,21 +135,27 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
 }
 .insta a:visited {
   color: #333132;
 }
-.insta-icon {
-  margin-left: 15px;
-}
-.insta-icon:hover {
+.insta:hover {
   cursor: pointer;
   color: #f7941d;
-  text-shadow: none;
+  text-shadow: #333132 3px 3px;
+}
+.insta-icon {
+  margin-left: 15px;
 }
 
 .photo {
   height: 550px;
+}
+@media (max-width: 1200px) {
+  .photo {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

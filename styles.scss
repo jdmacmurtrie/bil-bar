@@ -1,10 +1,16 @@
-// @media (max-width: 768px) {
-//   .sidebar {
-//     display: none;
-//   }
-// }
+@mixin smaller-than-desktop {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
 
-@mixin noto-sans {
+@mixin mobile {
+  @media (max-width: 599px) {
+    @content;
+  }
+}
+
+@mixin info-font {
   font-family: "Noto Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 700;
@@ -12,7 +18,7 @@
   font-variation-settings: "wdth" 100;
 }
 
-@mixin sarpanch {
+@mixin slogan-font {
   font-family: "Sarpanch", serif;
   font-weight: 400;
   font-style: normal;
@@ -35,7 +41,6 @@ body {
   background-size: cover;
   height: 450px;
   display: flex;
-  // border-bottom: $flat-black 25px solid;
   justify-content: center;
   align-items: center;
 }
@@ -52,15 +57,25 @@ body {
   box-shadow: $vintage-blue 9px 5px, $vintage-blue -9px 5px,
     $vintage-blue -9px -5px, $vintage-blue 9px -5px;
   background-color: $vintage-blue;
+
+  @include mobile {
+    height: 175px;
+    width: 300px;
+  }
 }
 
 .logo {
-  width: 400px;
-  height: 350px;
+  height: 400px;
+  width: 350px;
+
+  @include mobile {
+    height: 200px;
+    width: 250px;
+  }
 }
 
 .slogan {
-  @include sarpanch;
+  @include slogan-font;
 
   font-size: 42px;
   color: $warm-red;
@@ -71,6 +86,10 @@ body {
   justify-content: center;
   align-items: center;
   padding-bottom: 5px;
+
+  @include mobile {
+    font-size: 25px;
+  }
 }
 
 .information {
@@ -78,6 +97,10 @@ body {
   justify-content: space-between;
   background-color: $vintage-blue;
   align-items: center;
+
+  @include mobile {
+    padding: 20px 0;
+  }
 }
 
 .detail-block {
@@ -85,16 +108,25 @@ body {
   flex-direction: column;
   width: 100%;
   margin: 0 30px;
+
+  @include mobile {
+    align-items: center;
+    text-align: center;
+  }
 }
 
 .details {
-  @include noto-sans();
+  @include info-font();
 
   display: flex;
   flex-direction: column;
   color: $flat-black;
   font-size: 32px;
   text-shadow: $green-apple 3px 3px;
+
+  @include mobile {
+    font-size: 24px;
+  }
 }
 
 .icon-group {
@@ -127,22 +159,27 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
 
   a:visited {
     color: $flat-black;
   }
 
+  &:hover {
+    cursor: pointer;
+    color: $orange-peel;
+    text-shadow: $flat-black 3px 3px;
+  }
+
   &-icon {
     margin-left: 15px;
-
-    &:hover {
-      cursor: pointer;
-      color: $orange-peel;
-      text-shadow: none;
-    }
   }
 }
 
 .photo {
   height: 550px;
+
+  @include smaller-than-desktop {
+    display: none;
+  }
 }
