@@ -4,6 +4,30 @@
 //   }
 // }
 
+@keyframes swell {
+  0%,
+  100% {
+    font-size: 32px;
+  }
+  50% {
+    font-size: 40px;
+  }
+}
+
+@mixin noto-sans {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+@mixin sarpanch {
+  font-family: "Sarpanch", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 $orange-peel: #f7941d;
 $warm-red: #d86a27;
 $vintage-blue: #64a39d;
@@ -21,12 +45,15 @@ body {
   background-size: cover;
   height: 450px;
   display: flex;
-  border-bottom: $flat-black 25px solid;
+  // border-bottom: $flat-black 25px solid;
   justify-content: center;
   align-items: center;
 }
 
 .logo-outline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #7ebb59;
   height: 275px;
   width: 550px;
@@ -35,10 +62,6 @@ body {
   box-shadow: $vintage-blue 9px 5px, $vintage-blue -9px 5px,
     $vintage-blue -9px -5px, $vintage-blue 9px -5px;
   background-color: $vintage-blue;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .logo {
@@ -47,21 +70,70 @@ body {
 }
 
 .slogan {
+  @include sarpanch;
+
+  font-size: 42px;
   color: $warm-red;
+  width: 100%;
+  background-color: $flat-black;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5px;
 }
 
-.info {
+.information {
+  display: flex;
+  justify-content: space-between;
+  background-color: $vintage-blue;
+  align-items: center;
+}
+
+.detail-block {
   display: flex;
   flex-direction: column;
+  width: 100%;
+}
+
+.details {
+  @include noto-sans();
+
+  display: flex;
+  flex-direction: column;
+  color: $flat-black;
+  font-size: 32px;
+  text-shadow: $green-apple 3px 3px;
+  margin: 30px;
+}
+
+.icon-group {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  margin-top: 10px;
+}
 
-  &-phone {
-    margin: 0;
-    font-style: italic;
-  }
+.icon {
+  margin: 0 30px;
+  text-shadow: $green-apple 3px 3px;
+  color: $flat-black;
+}
 
-  & > h3 {
-    margin: 0;
+.insta {
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+
+  &-icon {
+    animation: swell 3s linear infinite;
+    margin-left: 15px;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
+}
+
+.photo {
+  height: 550px;
 }

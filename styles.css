@@ -1,3 +1,11 @@
+@keyframes swell {
+  0%, 100% {
+    font-size: 32px;
+  }
+  50% {
+    font-size: 40px;
+  }
+}
 body {
   font-family: "proxima-nova", sans-serif;
   margin: 0;
@@ -9,12 +17,14 @@ body {
   background-size: cover;
   height: 450px;
   display: flex;
-  border-bottom: #333132 25px solid;
   justify-content: center;
   align-items: center;
 }
 
 .logo-outline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #7ebb59;
   height: 275px;
   width: 550px;
@@ -22,9 +32,6 @@ body {
   border: 10px #333132 solid;
   box-shadow: #64a39d 9px 5px, #64a39d -9px 5px, #64a39d -9px -5px, #64a39d 9px -5px;
   background-color: #64a39d;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .logo {
@@ -33,21 +40,74 @@ body {
 }
 
 .slogan {
+  font-family: "Sarpanch", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 42px;
   color: #d86a27;
+  width: 100%;
+  background-color: #333132;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5px;
 }
 
-.info {
+.information {
+  display: flex;
+  justify-content: space-between;
+  background-color: #64a39d;
+  align-items: center;
+}
+
+.detail-block {
   display: flex;
   flex-direction: column;
+  width: 100%;
+}
+
+.details {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  display: flex;
+  flex-direction: column;
+  color: #333132;
+  font-size: 32px;
+  text-shadow: #7ebb59 3px 3px;
+  margin: 30px;
+}
+
+.icon-group {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  margin-top: 10px;
 }
-.info-phone {
-  margin: 0;
-  font-style: italic;
+
+.icon {
+  margin: 0 30px;
+  text-shadow: #7ebb59 3px 3px;
+  color: #333132;
 }
-.info > h3 {
-  margin: 0;
+
+.insta {
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+}
+.insta-icon {
+  animation: swell 3s linear infinite;
+  margin-left: 15px;
+}
+.insta-icon:hover {
+  cursor: pointer;
+}
+
+.photo {
+  height: 550px;
 }
 
 /*# sourceMappingURL=styles.css.map */
