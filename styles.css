@@ -57,6 +57,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin: 0 30px;
 }
 
 .details {
@@ -70,13 +71,13 @@ body {
   color: #333132;
   font-size: 32px;
   text-shadow: #7ebb59 3px 3px;
-  margin: 40px 30px;
 }
 
 .icon-group {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 30px 0;
 }
 
 .icon-frame {
@@ -100,7 +101,7 @@ body {
 .insta {
   flex-direction: row;
   align-items: center;
-  justify-content: left;
+  justify-content: center;
 }
 .insta a:visited {
   color: #333132;
